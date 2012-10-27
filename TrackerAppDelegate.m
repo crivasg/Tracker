@@ -36,9 +36,7 @@
 - (IBAction)store: (id)sender
 {
 	NSLog(@"hola....");
-	
 	NSLog(@"%@",[ [tabView selectedTabViewItem] label]);
-	
 	NSLog(@"%@",[ datePicker dateValue]);
 }
 
