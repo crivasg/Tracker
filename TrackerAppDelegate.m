@@ -83,7 +83,22 @@
 - (void)pathControlActionClick:(id)sender
 {
 	
-	NSLog(@"path control action click");
+	NSOpenPanel *openPanel = [ NSOpenPanel openPanel ];
+	NSArray *fileTypes = [NSArray arrayWithObjects:@"db",nil];
+	[openPanel setAllowsMultipleSelection: NO];
+	[openPanel setCanChooseDirectories:NO];
+	[openPanel setCanCreateDirectories:NO];
+	[openPanel setCanChooseFiles:YES];
+	[openPanel setAllowedFileTypes:fileTypes];
+	
+	[openPanel beginSheetModalForWindow:prefWindow completionHandler:^(NSInteger result) {
+		
+		if (result == NSFileHandlingPanelOKButton) {
+			
+			// Do something.
+		}
+	}];
+	
 	
 }
 
