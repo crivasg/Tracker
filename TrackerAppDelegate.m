@@ -90,6 +90,7 @@
 	[openPanel setCanCreateDirectories:NO];
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setAllowedFileTypes:fileTypes];
+	[openPanel setDirectoryURL:[pathControl URL]];
 	
 	[openPanel beginSheetModalForWindow:prefWindow completionHandler:^(NSInteger result) {
 		
