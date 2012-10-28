@@ -13,7 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="533"/>
-			<integer value="583"/>
+			<integer value="581"/>
 			<integer value="57"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -2755,6 +2755,14 @@
 					</object>
 					<int key="connectionID">607</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">prefWindow</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="590437360"/>
+					</object>
+					<int key="connectionID">608</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -4880,7 +4888,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">607</int>
+			<int key="maxID">608</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4889,14 +4897,42 @@
 					<string key="className">TrackerAppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">store:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>pathControlActionClick:</string>
+							<string>pathControlDoubleClick:</string>
+							<string>store:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">store:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">store:</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>pathControlActionClick:</string>
+							<string>pathControlDoubleClick:</string>
+							<string>store:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">pathControlActionClick:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">pathControlDoubleClick:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">store:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -4906,6 +4942,7 @@
 							<string>datePicker</string>
 							<string>massSlider</string>
 							<string>pathControl</string>
+							<string>prefWindow</string>
 							<string>runningSlider</string>
 							<string>tabView</string>
 							<string>walkingSlider</string>
@@ -4917,6 +4954,7 @@
 							<string>NSDatePicker</string>
 							<string>NSSlider</string>
 							<string>NSPathControl</string>
+							<string>NSWindow</string>
 							<string>NSSlider</string>
 							<string>NSTabView</string>
 							<string>NSSlider</string>
@@ -4931,6 +4969,7 @@
 							<string>datePicker</string>
 							<string>massSlider</string>
 							<string>pathControl</string>
+							<string>prefWindow</string>
 							<string>runningSlider</string>
 							<string>tabView</string>
 							<string>walkingSlider</string>
@@ -4950,6 +4989,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">pathControl</string>
 								<string key="candidateClassName">NSPathControl</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">prefWindow</string>
+								<string key="candidateClassName">NSWindow</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">runningSlider</string>

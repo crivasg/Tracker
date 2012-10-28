@@ -10,6 +10,8 @@
 
 @interface TrackerAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	NSWindow *prefWindow;
+	
 	NSSlider *massSlider;
 	NSSlider *weightsSlider;
 	NSSlider *walkingSlider;
@@ -24,6 +26,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSWindow *prefWindow;
 
 @property (assign) IBOutlet NSSlider *massSlider;
 @property (assign) IBOutlet NSSlider *weightsSlider;

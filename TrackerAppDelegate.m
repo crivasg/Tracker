@@ -13,6 +13,7 @@
 @implementation TrackerAppDelegate
 
 @synthesize window;
+@synthesize prefWindow;
 
 @synthesize massSlider;
 @synthesize weightsSlider;
