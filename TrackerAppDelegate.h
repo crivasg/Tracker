@@ -39,5 +39,7 @@
 - (IBAction)store: (id)sender;
 
 - (void)setup;
+- (void)pathControlDoubleClick:(id)sender;
+- (void)pathControlActionClick:(id)sender;
 
 @end

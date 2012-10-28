@@ -6,6 +6,7 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 // https://developer.apple.com/cocoa/cocoabindings.html
+// http://developer.apple.com/library/mac/#samplecode/ObjectPath/Listings/MyWindowController_m.html
 
 #import "TrackerAppDelegate.h"
 
@@ -45,6 +46,12 @@
 
 - (void)setup
 {
+	
+	[pathControl setTarget:self];
+    [pathControl setDoubleAction:@selector(pathControlDoubleClick:)];
+	[pathControl setAction:@selector(pathControlActionClick:)];
+    //[pathControl setDelegate:self];
+	
 	NSURL *url =  [NSURL fileURLWithPath:@"/Volumes/FEDORA/personal/personal.db" 
 							 isDirectory:NO];
 	[pathControl setURL:url];
@@ -63,6 +70,20 @@
 	[walkingSlider performClick:nil];
 	[runningSlider performClick:nil];
 
+}
+
+- (void)pathControlDoubleClick:(id)sender
+{
+	
+	NSLog(@"path control double click");
+	
+}
+
+- (void)pathControlActionClick:(id)sender
+{
+	
+	NSLog(@"path control action click");
+	
 }
 
 
