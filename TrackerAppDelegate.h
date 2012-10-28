@@ -19,6 +19,8 @@
 	
 	NSTabView *tabView;
 	
+	NSPathControl *pathControl;
+	
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -31,6 +33,8 @@
 @property (assign) IBOutlet NSDatePicker *datePicker;
 
 @property (assign) IBOutlet NSTabView *tabView;
+
+@property (assign) IBOutlet NSPathControl *pathControl;
 
 - (IBAction)store: (id)sender;
 

@@ -5,6 +5,7 @@
 //  Created by Cesar Rivas on 9/30/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
+// https://developer.apple.com/cocoa/cocoabindings.html
 
 #import "TrackerAppDelegate.h"
 
@@ -20,6 +21,8 @@
 @synthesize datePicker;
 
 @synthesize tabView;
+
+@synthesize pathControl;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
@@ -42,6 +45,8 @@
 
 - (void)setup
 {
+	NSURL *url =  [NSURL URLWithString:@"file://Volumes/FEDORA/personal/personal.db"];
+	[pathControl setURL:url];
 
 	NSDate *today = [ NSDate date];
 	
