@@ -45,7 +45,8 @@
 
 - (void)setup
 {
-	NSURL *url =  [NSURL URLWithString:@"file://Volumes/FEDORA/personal/personal.db"];
+	NSURL *url =  [NSURL fileURLWithPath:@"/Volumes/FEDORA/personal/personal.db" 
+							 isDirectory:NO];
 	[pathControl setURL:url];
 
 	NSDate *today = [ NSDate date];
