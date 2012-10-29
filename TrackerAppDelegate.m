@@ -9,6 +9,7 @@
 // http://developer.apple.com/library/mac/#samplecode/ObjectPath/Listings/MyWindowController_m.html
 
 #import "TrackerAppDelegate.h"
+#import "NSFileManager+DirectoryLocations.h"
 
 @implementation TrackerAppDelegate
 
@@ -56,17 +57,23 @@
 	NSString *pathKey    = @"path";
 	NSString *unitsKey    = @"englishUnits";
 	NSPathControl *path = (NSPathControl *)[[NSUserDefaults standardUserDefaults] objectForKey:pathKey];
-	BOOL englishUnits = (BOOL)[[NSUserDefaults standardUserDefaults] objectForKey:unitsKey];
+	BOOL englishUnits = [[NSUserDefaults standardUserDefaults] boolForKey:unitsKey];
 	
 	if (path == nil)  
 	{
 		NSLog(@"default for path control does not exist");
 		//[ pathControl performClick:0];
+		NSString *pathDir = [[NSFileManager defaultManager] applicationSupportDirectory];
+		NSString *databasePath = [ pathDir stringByAppendingPathComponent:@"database.db"];
+		
+		NSLog(@"%@",databasePath);
+		
+		NSURL *url =  [NSURL fileURLWithPath:databasePath 
+								 isDirectory:NO];
+		
+		[pathControl setURL:url];
+		
 	}
-	
-	NSURL *url =  [NSURL fileURLWithPath:@"/Volumes/FEDORA/personal/personal.db" 
-							 isDirectory:NO];
-	[pathControl setURL:url];
 
 	NSDate *today = [ NSDate date];
 	
