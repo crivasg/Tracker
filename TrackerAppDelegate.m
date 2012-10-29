@@ -53,6 +53,17 @@
 	[pathControl setAction:@selector(pathControlActionClick:)];
     //[pathControl setDelegate:self];
 	
+	NSString *pathKey    = @"path";
+	NSString *unitsKey    = @"englishUnits";
+	NSPathControl *path = (NSPathControl *)[[NSUserDefaults standardUserDefaults] objectForKey:pathKey];
+	BOOL englishUnits = (BOOL)[[NSUserDefaults standardUserDefaults] objectForKey:unitsKey];
+	
+	if (path == nil)  
+	{
+		NSLog(@"default for path control does not exist");
+		//[ pathControl performClick:0];
+	}
+	
 	NSURL *url =  [NSURL fileURLWithPath:@"/Volumes/FEDORA/personal/personal.db" 
 							 isDirectory:NO];
 	[pathControl setURL:url];
@@ -94,11 +105,13 @@
 	
 	[openPanel beginSheetModalForWindow:prefWindow completionHandler:^(NSInteger result) {
 		
-		if (result == NSFileHandlingPanelOKButton) {
+		if (result == NSFileHandlingPanelOKButton) 
+		{
 			
 			// Do something.
 		}
-	}];
+	}
+	];
 	
 	
 }
