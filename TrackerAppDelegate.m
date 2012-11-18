@@ -57,7 +57,7 @@
 	NSString *pathKey    = @"path";
 	NSString *unitsKey    = @"englishUnits";
 	NSPathControl *path = (NSPathControl *)[[NSUserDefaults standardUserDefaults] objectForKey:pathKey];
-	BOOL englishUnits = [[NSUserDefaults standardUserDefaults] boolForKey:unitsKey];
+	//BOOL englishUnits = [[NSUserDefaults standardUserDefaults] boolForKey:unitsKey];
 	
 	if (path == nil)  
 	{
