@@ -23,3 +23,11 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+
+# FMDB files
+shell.c
+sqlite3.c
+sqlite3.def
+sqlite3.h
+sqlite3ext.h
+unistd.h
