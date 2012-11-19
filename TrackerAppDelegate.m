@@ -27,6 +27,9 @@
 
 @synthesize pathControl;
 
+static double KILOGRAMS_TO_POUNDS = 2.2046226;
+static double MAX_WEIGHT = 150.0;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
 	
@@ -57,7 +60,7 @@
 	NSString *pathKey    = @"path";
 	NSString *unitsKey    = @"englishUnits";
 	NSPathControl *path = (NSPathControl *)[[NSUserDefaults standardUserDefaults] objectForKey:pathKey];
-	//BOOL englishUnits = [[NSUserDefaults standardUserDefaults] boolForKey:unitsKey];
+	BOOL englishUnits = [[NSUserDefaults standardUserDefaults] boolForKey:unitsKey];
 	
 	if (path == nil)  
 	{
@@ -78,8 +81,21 @@
 	NSDate *today = [ NSDate date];
 	
 	[datePicker setDateValue:today];
+		
+	if (!englishUnits)
+	{
+		[massSlider setDoubleValue:123.3];
+		[massSlider setMaxValue:MAX_WEIGHT];
+		[massSlider setMinValue:0.0];
+	}
+	else
+	{
+		[massSlider setMaxValue:MAX_WEIGHT*KILOGRAMS_TO_POUNDS];
+		[massSlider setMinValue:0.0];	
+		[massSlider setDoubleValue:123.3*KILOGRAMS_TO_POUNDS];
 	
-	[massSlider setFloatValue:123.3];
+	}
+	
 	[weightsSlider setIntegerValue:50];
 	[walkingSlider setIntegerValue:30];
 	[runningSlider setIntegerValue:0];
